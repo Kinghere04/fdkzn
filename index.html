@@ -881,13 +881,44 @@ function fillSelects() {
 
 function rAdmFixtures() {
   const el = document.getElementById('adm-fixtures'); if(!el) return;
-  const sorted = [...C.fixtures].sort((a,b)=>new Date(b.match_date)-new Date(a.match_date));
-  if(!sorted.length){ el.innerHTML='<p style="color:var(--gray);font-size:13px">No fixtures yet.</p>'; return; }
-  el.innerHTML = sorted.map(m=>{
+  if(!C.fixtures.length){ el.innerHTML='<p style="color:var(--gray);font-size:13px">No fixtures yet.</p>'; return; }
+
+  const upcomingRounds = ['Round 5 – August','Round 6 – September','Round 7 – October','Round 8 – November','Round 9 – December','Round 10 – Extra'];
+  const upcoming = C.fixtures.filter(m=>m.status==='upcoming' && upcomingRounds.includes(m.round));
+  const played = C.fixtures.filter(m=>m.status==='played'||m.status==='halftime'||m.status==='live');
+  const all = [...C.fixtures].sort((a,b)=>new Date(a.match_date||'9999')-new Date(b.match_date||'9999'));
+
+  function fixCard(m) {
     const ht=TEAMS.find(t=>t.id==m.home_id), at=TEAMS.find(t=>t.id==m.away_id);
-    const score = m.status==='played' ? `${m.hs}–${m.away_score}` : `<span class="bup">Upcoming</span>`;
-    return `<div class="mcard"><div class="mcardh"><div class="mct">${ht?ht.name:'?'} vs ${at?at.name:'?'}</div><div style="display:flex;gap:6px;align-items:center"><div class="mcs">${score}</div><button class="bsm" onclick="editFixture(${m.id})">Edit</button><button class="bsm bsm-r" onclick="delFixture(${m.id})">Delete</button></div></div><div class="mcd">${fmtDate(m.match_date)}${m.match_time?' · '+m.match_time:''}${m.venue?' · '+m.venue:''} · ${m.status}</div></div>`;
-  }).join('');
+    const score = ['played','live','halftime'].includes(m.status) ? `${m.hs}–${m.away_score}` : `<span class="bup">${m.status}</span>`;
+    return `<div class="mcard"><div class="mcardh"><div class="mct">${ht?ht.name:'?'} vs ${at?at.name:'?'}</div><div style="display:flex;gap:6px;align-items:center"><div class="mcs">${score}</div><button class="bsm" onclick="editFixture(${m.id})">Edit</button><button class="bsm bsm-r" onclick="delFixture(${m.id})">Del</button></div></div><div class="mcd">${m.round||''} · ${m.match_date?fmtDate(m.match_date):'TBD'}${m.match_time?' · '+m.match_time:''}${m.venue?' · '+m.venue:''}</div></div>`;
+  }
+
+  const tabs = [
+    {id:'af-up', label:`Upcoming (Aug–Dec) · ${upcoming.length}`, data:upcoming},
+    {id:'af-pl', label:`Played · ${played.length}`, data:played},
+    {id:'af-all', label:`All · ${all.length}`, data:all}
+  ];
+
+  let tabHtml = `<div style="display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap">`;
+  tabs.forEach((t,i)=>{ tabHtml+=`<button class="atb${i===0?' act':''}" onclick="admFixTab('${t.id}',this)">${t.label}</button>`; });
+  tabHtml += `</div>`;
+
+  tabs.forEach((t,i)=>{
+    tabHtml += `<div id="${t.id}" style="display:${i===0?'block':'none'}">`;
+    if(!t.data.length){ tabHtml+='<p style="color:var(--gray);font-size:13px">None yet.</p>'; }
+    else { tabHtml += t.data.map(fixCard).join(''); }
+    tabHtml += '</div>';
+  });
+
+  el.innerHTML = tabHtml;
+}
+
+function admFixTab(id, btn) {
+  ['af-up','af-pl','af-all'].forEach(t=>{ const el=document.getElementById(t); if(el) el.style.display='none'; });
+  document.querySelectorAll('#adm-fixtures .atb').forEach(b=>b.classList.remove('act'));
+  const el=document.getElementById(id); if(el) el.style.display='block';
+  if(btn) btn.classList.add('act');
 }
 
 async function saveFixture() {
