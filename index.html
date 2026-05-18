@@ -693,6 +693,18 @@ function rStandings() {
   }).join('');
 }
 
+// ===== STATUS BADGE =====
+function statusBadge(m) {
+  const s = m.status;
+  if(s==='upcoming') return `<span class="bup" style="background:rgba(240,180,41,.1);color:var(--gold);border:1px solid var(--border)"">Upcoming</span>${m.match_time?`<span class="btime">${m.match_time}</span>`:''}`;
+  if(s==='live')     return `<span class="bup" style="background:rgba(39,174,96,.2);color:#27ae60;border:1px solid rgba(39,174,96,.4)">● Live</span>`;
+  if(s==='halftime') return `<span class="bup" style="background:rgba(126,179,255,.2);color:var(--blue);border:1px solid rgba(126,179,255,.4)">Half Time</span>`;
+  if(s==='played')   return `<span class="bup" style="background:rgba(255,255,255,.07);color:var(--lgray);border:1px solid rgba(255,255,255,.1)">Full Time</span>`;
+  if(s==='postponed')return `<span class="bup" style="background:rgba(241,196,15,.15);color:var(--yellow);border:1px solid rgba(241,196,15,.3)">Postponed</span>`;
+  if(s==='cancelled')return `<span class="bup" style="background:rgba(231,76,60,.15);color:var(--red);border:1px solid rgba(231,76,60,.3)">Cancelled</span>`;
+  return '';
+}
+
 // ===== FIXTURES =====
 const ROUND_ORDER = ['Round 1 – February/March','Round 2 – April','Round 3 – May','Round 4 – July','Round 5 – August','Round 6 – September','Round 7 – October','Round 8 – November','Round 9 – December','Round 10 – Extra'];
 
