@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="Football Deaf KwaZulu-Natal (FDKZN) - Community football league for deaf and hard-of-hearing players. View standings, fixtures, teams, and players from the 2025 season.">
+<meta name="description" content="KwaZulu-Natal Deaf Football Association (KZNDFA) - Community football league for deaf and hard-of-hearing players. View standings, fixtures, teams, and players from the 2025 season.">
 <meta name="keywords" content="deaf football, KwaZulu-Natal, league standings, fixtures, sports">
 <meta name="google-site-verification" content="google-site-verification=G-4J6mRSpLsCNqP0XLH0V1-0jPBjWrW2vwt7sGEHmaU">
-<meta property="og:title" content="Football Deaf KwaZulu-Natal | FDKZN">
+<meta property="og:title" content="KwaZulu-Natal Deaf Football Association | KZNDFA">
 <meta property="og:description" content="Community football league for deaf and hard-of-hearing players across KwaZulu-Natal">
 <meta property="og:url" content="https://fdkzn.netlify.app/">
 <meta property="og:type" content="website">
-<meta name="author" content="Football Deaf KwaZulu-Natal">
+<meta name="author" content="KwaZulu-Natal Deaf Football Association">
 <link rel="canonical" href="https://fdkzn.netlify.app/">
-<title>Football Deaf KwaZulu-Natal | FDKZN</title>
+<title>KwaZulu-Natal Deaf Football Association | KZNDFA</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -239,7 +239,7 @@ footer .fsocial a:hover{color:var(--gold)}
 <body>
 
 <nav>
-  <div class="logo">FDKZN <small>Football Deaf KwaZulu-Natal</small></div>
+  <div class="logo">KZNDFA <small>KwaZulu-Natal Deaf Football Association</small></div>
   <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </button>
@@ -261,8 +261,8 @@ footer .fsocial a:hover{color:var(--gold)}
 <div class="page active" id="p-home">
   <div class="hero">
     <div class="hero-badge">KwaZulu-Natal · 2025 Season</div>
-    <h1>Football Deaf<em>KwaZulu-Natal</em></h1>
-    <p>Empowering deaf footballers across the province</p>
+    <h1>KwaZulu-Natal<em>Deaf Football</em></h1>
+    <p>KwaZulu-Natal Deaf Football Association · Est. 2025</p>
     <div class="hero-btns">
       <button class="btn-gold" onclick="go('standings',null)">View Standings</button>
       <button class="btn-out" onclick="go('schedule',null)">Fixtures &amp; Results</button>
@@ -364,11 +364,11 @@ footer .fsocial a:hover{color:var(--gold)}
 <!-- ABOUT -->
 <div class="page" id="p-about">
   <div class="inner">
-    <div class="sh">About <span>FDKZN</span></div><div class="ss">Our mission and values</div>
+    <div class="sh">About <span>KZNDFA</span></div><div class="ss">Our mission and values</div>
     <div class="agrid">
       <div>
-        <p class="ap">Football Deaf KwaZulu-Natal (FDKZN) is a community football league dedicated to providing competitive and inclusive football opportunities for deaf and hard-of-hearing players across the province.</p>
-        <p class="ap">Founded to bridge the gap between mainstream football and the deaf community, FDKZN organises regular fixtures, tournaments, and development programmes for players of all skill levels across the province.</p>
+        <p class="ap">KwaZulu-Natal Deaf Football Association (KZNDFA) is a community football league dedicated to providing competitive and inclusive football opportunities for deaf and hard-of-hearing players across the province.</p>
+        <p class="ap">Founded to bridge the gap between mainstream football and the deaf community, KZNDFA organises regular fixtures, tournaments, and development programmes for players of all skill levels across the province.</p>
         <p class="ap">We work closely with the South African Deaf Sports Federation and local football clubs to grow the beautiful game within KwaZulu-Natal's deaf community.</p>
       </div>
       <div>
@@ -407,7 +407,7 @@ footer .fsocial a:hover{color:var(--gold)}
 <div class="page" id="p-login">
   <div class="lbg">
     <div class="lbox">
-      <div class="llogo">FDKZN</div>
+      <div class="llogo">KZNDFA</div>
       <div class="lsub">League Administrator Login</div>
       <div class="lerr" id="lerr">Incorrect username or password.</div>
       <div style="margin-bottom:12px"><span class="flbl">Username</span><input class="inp" id="lu" type="text" placeholder="admin" style="margin-bottom:0"></div>
@@ -420,7 +420,7 @@ footer .fsocial a:hover{color:var(--gold)}
 <!-- ADMIN -->
 <div class="page" id="p-admin">
   <div class="ahd">
-    <div><div class="atitle">Admin Panel</div><div class="arole">League Administrator · Football Deaf KwaZulu-Natal</div></div>
+    <div><div class="atitle">Admin Panel</div><div class="arole">League Administrator · KwaZulu-Natal Deaf Football Association</div></div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <button class="bsm" onclick="go('home',null)">View Site</button>
       <button class="bsm bsm-r" onclick="logout()">Logout</button>
@@ -538,7 +538,7 @@ footer .fsocial a:hover{color:var(--gold)}
 </div>
 
 <footer>
-  <p>&copy; 2025 <strong>Football Deaf KwaZulu-Natal (FDKZN)</strong>. All rights reserved.</p>
+  <p>&copy; 2025 <strong>KwaZulu-Natal Deaf Football Association (KZNDFA)</strong>. All rights reserved.</p>
   <p style="margin-top:6px">Proudly serving the deaf football community of KwaZulu-Natal, South Africa.</p>
   <div class="fsocial"><a href="#">Facebook</a><a href="#">WhatsApp</a><a href="#">Email</a></div>
 </footer>
@@ -1175,7 +1175,7 @@ function rAdmGallery() {
 function doLogin() {
   const u=document.getElementById('lu').value.trim();
   const p=document.getElementById('lp').value;
-  if((u==='admin'||u==='FDKZN')&&p==='admin123'){
+  if((u==='admin'||u==='KZNDFA')&&p==='admin123'){
     document.getElementById('lerr').style.display='none';
     fillSelects(); go('admin',null);
   } else { document.getElementById('lerr').style.display='block'; }
