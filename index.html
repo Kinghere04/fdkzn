@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="KwaZulu-Natal Deaf Football Association (KZNDFA) - Community football league for deaf and hard-of-hearing players. View standings, fixtures, teams, and players from the 2026 season.">
-<meta name="keywords" content="deaf football, KwaZulu-Natal, league standings, fixtures, sports">
-<meta name="google-site-verification" content="google-site-verification=G-4J6mRSpLsCNqP0XLH0V1-0jPBjWrW2vwt7sGEHmaU">
+<title>KwaZulu-Natal Deaf Football Association | KZNDFA</title>
+<meta name="description" content="KwaZulu-Natal Deaf Football Association (KZNDFA) - Community football league for deaf and hard-of-hearing players. View standings, fixtures, teams, and players.">
+<meta name="keywords" content="deaf football, KwaZulu-Natal, KZNDFA, league standings, fixtures, sports">
+<link rel="canonical" href="https://kinghere04.github.io/kzndfa/">
 <meta property="og:title" content="KwaZulu-Natal Deaf Football Association | KZNDFA">
 <meta property="og:description" content="Community football league for deaf and hard-of-hearing players across KwaZulu-Natal">
-<meta property="og:url" content="https://fdkzn.netlify.app/">
+<meta property="og:url" content="https://kinghere04.github.io/kzndfa/">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230f1a10'/><text y='.9em' font-size='80' x='10' fill='%23f0b429'>⚽</text></svg>">
 <meta name="author" content="KwaZulu-Natal Deaf Football Association">
 <link rel="canonical" href="https://fdkzn.netlify.app/">
 <title>KwaZulu-Natal Deaf Football Association | KZNDFA</title>
@@ -89,19 +91,23 @@ tbody td{padding:10px 8px;color:var(--w);vertical-align:middle}
 .tname{font-weight:700;display:flex;align-items:center;gap:8px}
 .tname img{width:24px;height:24px;border-radius:50%;object-fit:cover;border:1px solid var(--gold)}
 .pts{font-size:18px;font-weight:900;color:var(--gold)}
-.fd{display:inline-block;width:7px;height:7px;border-radius:50%;margin:0 1px}
+.fd{display:inline-block;width:8px;height:8px;border-radius:50%;margin:0 3px}
 .fw{background:#27ae60}.fdraw{background:var(--gray)}.fl{background:var(--red)}
-.fix{background:var(--bg2);border-left:3px solid transparent;margin-bottom:2px;padding:12px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;transition:border-color .2s;}
+.fix{background:var(--bg2);border-left:3px solid transparent;margin-bottom:2px;padding:12px 16px;display:flex;align-items:center;gap:8px;transition:border-color .2s;}
 .fix:hover{border-left-color:var(--gold)}
 .fix.clickable{cursor:pointer}
 .fdate{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gray);min-width:54px;flex-shrink:0}
-.fteams{flex:1;text-align:center;font-size:clamp(12px,2.5vw,15px);font-weight:700;color:var(--w);min-width:150px}
-.fvs{color:var(--gold);font-size:11px;font-weight:400;margin:0 6px}
-.fscore{font-size:clamp(16px,3vw,20px);font-weight:900;color:var(--gold);min-width:46px;text-align:right;flex-shrink:0}
+.fteams{flex:1;text-align:center;font-size:clamp(11px,2vw,14px);font-weight:700;color:var(--w);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;min-width:0;}
+.fhome,.faway{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.fhome{text-align:right}
+.faway{text-align:left}
+.fvs{color:var(--gold);font-size:11px;font-weight:400;flex-shrink:0;padding:0 4px}
+.fscore{font-size:clamp(16px,3vw,20px);font-weight:900;color:var(--gold);min-width:54px;text-align:center;flex-shrink:0}
 .fvenue{font-size:9px;color:var(--gray);min-width:70px;text-align:right;flex-shrink:0}
+.fbadge{display:flex;align-items:center;gap:4px;flex-shrink:0}
 .bup{font-size:9px;background:rgba(240,180,41,.1);color:var(--gold);padding:2px 7px;border-radius:2px;border:1px solid var(--border);white-space:nowrap}
 .btime{font-size:10px;color:var(--gray);margin-left:4px}
-@media(max-width:480px){.fvenue{display:none}}
+@media(max-width:600px){.fvenue{display:none}.fhome,.faway{font-size:11px}}
 .mdetail-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:20px}
 .mdhd{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px}
 .mdteams{font-size:clamp(14px,3vw,20px);font-weight:900;color:var(--w)}
@@ -307,7 +313,7 @@ footer .fsocial a:hover{color:var(--gold)}
           <th style="width:36px">#</th><th>Team</th>
           <th style="width:36px">P</th><th style="width:36px">W</th><th style="width:36px">D</th><th style="width:36px">L</th>
           <th style="width:40px">GF</th><th style="width:40px">GA</th><th style="width:40px">GD</th>
-          <th style="width:65px">Form</th><th style="width:44px">Pts</th>
+          <th style="width:60px">Form</th><th style="width:44px">Pts</th>
         </tr></thead>
         <tbody id="s-body"><tr><td colspan="11" class="loading">Loading</td></tr></tbody>
       </table>
@@ -387,10 +393,11 @@ footer .fsocial a:hover{color:var(--gold)}
     <div class="sh">Get in <span>Touch</span></div><div class="ss">Contact the league administration</div>
     <div class="cgrid">
       <div>
-        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><div class="clbl">Location</div><div class="cval">Durban, KwaZulu-Natal, South Africa</div></div></div>
-        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div><div class="clbl">Email</div><div class="cval">internsproject53@gmail.com</div></div></div>
-        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><div class="clbl">Phone</div><div class="cval">+27 074 938 4925</div></div></div>
-        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div><div><div class="clbl">Season</div><div class="cval">February – November 2026</div></div></div>
+        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><div class="clbl">Location</div><div class="cval">Durban Area, KwaZulu-Natal, South Africa</div></div></div>
+        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div><div class="clbl">Email</div><div class="cval">Kzndfa@sadeafsports.co.za</div></div></div>
+        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><div class="clbl">Phone</div><div class="cval">081 301 8818</div></div></div>
+        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><div><div class="clbl">Facebook</div><div class="cval">KwaZulu-Natal Deaf Football Association</div></div></div>
+        <div class="ci"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div><div><div class="clbl">Season</div><div class="cval" id="contact-season">February – November 2026</div></div></div>
       </div>
       <div>
         <input class="inp" id="c-name" type="text" placeholder="Your name">
@@ -707,37 +714,75 @@ function statusBadge(m) {
 
 // ===== FIXTURES =====
 const ROUND_ORDER = ['Round 1 – February/March','Round 2 – April','Round 3 – May','Round 4 – July','Round 5 – August','Round 6 – September','Round 7 – October','Round 8 – November','Round 9 – December','Round 10 – Extra'];
+const ROUND_SHORT = ['R1 Feb/Mar','R2 Apr','R3 May','R4 Jul','R5 Aug','R6 Sep','R7 Oct','R8 Nov','R9 Dec','R10 Extra'];
 
+function fixRow(m) {
+  const ht=TEAMS.find(t=>t.id==m.home_id), at=TEAMS.find(t=>t.id==m.away_id);
+  const hasScore=['played','live','halftime'].includes(m.status);
+  const score = hasScore ? `<div class="fscore">${m.hs} – ${m.away_score}</div>` : `<div class="fscore"></div>`;
+  const click = m.status==='played' ? `onclick="showMatch(${m.id})" class="fix clickable"` : `class="fix"`;
+  return `<div ${click}>
+    <div class="fdate">${m.match_date?fmtDate(m.match_date):'TBD'}</div>
+    <div class="fteams"><span class="fhome">${ht?ht.name:'?'}</span><span class="fvs">vs</span><span class="faway">${at?at.name:'?'}</span></div>
+    <div class="fbadge">${statusBadge(m)}</div>
+    ${score}
+    <div class="fvenue">${m.venue||''}</div>
+  </div>`;
+}
+
+let activeRound = 0;
 function rFixtures() {
   const el = document.getElementById('pub-fix'); if(!el) return;
   if(!C.fixtures.length){ el.innerHTML='<p style="color:var(--gray);font-size:13px;padding:12px 0">No fixtures added yet.</p>'; return; }
   const grouped = {};
   ROUND_ORDER.forEach(r=>grouped[r]=[]);
-  C.fixtures.forEach(m=>{ const r=m.round||'Round 1 – February/March'; if(!grouped[r]) grouped[r]=[]; grouped[r].push(m); });
-  let html='';
-  ROUND_ORDER.forEach(round=>{
-    const matches = grouped[round].filter(m => !(m.status === 'upcoming' && !m.match_date)); if(!matches||!matches.length) return;
-    html += `<div style="margin-bottom:20px"><div style="font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding:8px 0 6px;border-bottom:2px solid var(--gold);margin-bottom:4px">${round}</div>`;
-    matches.sort((a,b)=>new Date(a.match_date+' '+(a.match_time||'00:00'))-new Date(b.match_date+' '+(b.match_time||'00:00')));
-    html += matches.map(m=>{
-      const ht=TEAMS.find(t=>t.id==m.home_id), at=TEAMS.find(t=>t.id==m.away_id);
-      const hasScore=['played','live','halftime'].includes(m.status);
-      const score = hasScore ? `${m.hs} – ${m.away_score}` : '';
-      const click = m.status==='played' ? `onclick="showMatch(${m.id})" class="fix clickable"` : `class="fix"`;
-      return `<div ${click}><div class="fdate">${m.match_date?fmtDate(m.match_date):'TBD'}</div><div class="fteams">${ht?ht.name:'?'}<span class="fvs">vs</span>${at?at.name:'?'} ${statusBadge(m)}</div><div class="fscore">${score}</div><div class="fvenue">${m.venue||''}</div></div>`;
-    }).join('');
-    html += '</div>';
+  C.fixtures.forEach(m=>{ const r=m.round||ROUND_ORDER[0]; if(!grouped[r]) grouped[r]=[]; grouped[r].push(m); });
+
+  // Find first round with visible matches
+  const visibleRounds = ROUND_ORDER.filter(r=>{
+    const matches = (grouped[r]||[]).filter(m=>!(m.status==='upcoming'&&!m.match_date));
+    return matches.length>0;
   });
-  el.innerHTML = html;
+  if(!visibleRounds.length){ el.innerHTML='<p style="color:var(--gray);font-size:13px">No fixtures yet.</p>'; return; }
+
+  // Default to current round or first visible
+  if(activeRound>=ROUND_ORDER.length||!visibleRounds.includes(ROUND_ORDER[activeRound])){
+    activeRound = ROUND_ORDER.indexOf(visibleRounds[0]);
+  }
+
+  // Build tabs
+  let tabHtml = `<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);overflow-x:auto">`;
+  ROUND_ORDER.forEach((r,i)=>{
+    const hasMatches = (grouped[r]||[]).filter(m=>!(m.status==='upcoming'&&!m.match_date)).length>0;
+    if(!hasMatches) return;
+    tabHtml += `<button class="atb${i===activeRound?' act':''}" onclick="switchRound(${i})" style="font-size:10px;padding:5px 10px">${ROUND_SHORT[i]}</button>`;
+  });
+  tabHtml += `</div>`;
+
+  // Build matches for active round
+  const activeMatches = (grouped[ROUND_ORDER[activeRound]]||[])
+    .filter(m=>!(m.status==='upcoming'&&!m.match_date))
+    .sort((a,b)=>new Date(a.match_date+' '+(a.match_time||'00:00'))-new Date(b.match_date+' '+(b.match_time||'00:00')));
+
+  const roundLabel = `<div style="font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding:8px 0 10px">${ROUND_ORDER[activeRound]}</div>`;
+  const matchHtml = activeMatches.length ? activeMatches.map(fixRow).join('') : '<p style="color:var(--gray);font-size:13px">No matches in this round yet.</p>';
+
+  el.innerHTML = tabHtml + roundLabel + matchHtml;
+}
+
+function switchRound(idx) {
+  activeRound = idx;
+  rFixtures();
 }
 
 function rHomeResults() {
   const el = document.getElementById('h-results'); if(!el) return;
-  const played = C.fixtures.filter(m=>m.status==='played').sort((a,b)=>new Date(b.match_date)-new Date(a.match_date)).slice(0,4);
+  const played = C.fixtures.filter(m=>['played','live','halftime'].includes(m.status)).sort((a,b)=>new Date(b.match_date)-new Date(a.match_date)).slice(0,4);
   if(!played.length){ el.innerHTML='<p style="color:var(--gray);font-size:13px">No results yet.</p>'; return; }
   el.innerHTML = played.map(m=>{
     const ht=TEAMS.find(t=>t.id==m.home_id), at=TEAMS.find(t=>t.id==m.away_id);
-    return `<div class="fix clickable" onclick="showMatch(${m.id})"><div class="fdate">${fmtDate(m.match_date)}</div><div class="fteams">${ht?ht.name:'?'}<span class="fvs">vs</span>${at?at.name:'?'}</div><div class="fscore">${m.hs} – ${m.away_score}</div><div class="fvenue">${m.venue||''}</div></div>`;
+    const click = m.status==='played' ? `onclick="showMatch(${m.id})"` : '';
+    return `<div class="fix clickable" ${click}><div class="fdate">${fmtDate(m.match_date)}</div><div class="fteams"><span class="fhome">${ht?ht.name:'?'}</span><span class="fvs">vs</span><span class="faway">${at?at.name:'?'}</span></div><div class="fbadge">${statusBadge(m)}</div><div class="fscore">${m.hs} – ${m.away_score}</div><div class="fvenue">${m.venue||''}</div></div>`;
   }).join('');
 }
 
@@ -1286,9 +1331,38 @@ async function sendContact() {
   btn.textContent = 'Send Message'; btn.disabled = false;
 }
 
+// ===== AUTO SEASON + UPCOMING LABEL =====
+function autoUpdateSeason() {
+  const now = new Date();
+  const yr = now.getFullYear();
+  const mo = now.getMonth(); // 0=Jan
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  // Update season year everywhere
+  document.querySelectorAll('.season-year').forEach(el=>el.textContent=yr);
+
+  // Update contact season
+  const cs = document.getElementById('contact-season');
+  if(cs) cs.textContent = `February – November ${yr}`;
+
+  // Update hero badge
+  document.querySelectorAll('.hero-badge').forEach(el=>{ el.textContent=`KwaZulu-Natal · ${yr} Season`; });
+
+  // Update statsbar season
+  document.querySelectorAll('.sl').forEach(el=>{ if(el.textContent==='Season') el.previousElementSibling && (el.previousElementSibling.textContent=yr); });
+
+  // Auto upcoming label in admin tab
+  const fromMonth = months[mo];
+  const toMonth = 'Dec';
+  const nextYr = mo===0 ? yr : null;
+  const upLabel = mo===0 ? `Upcoming (Jan–Dec ${yr})` : `Upcoming (${fromMonth}–${toMonth})`;
+  document.querySelectorAll('#adm-fixtures .atb').forEach(b=>{ if(b.textContent.startsWith('Upcoming')) b.textContent = upLabel + b.textContent.replace(/Upcoming[^·]*/,''); });
+}
+
 // ===== INIT =====
 (async()=>{
   await loadAll();
+  autoUpdateSeason();
   rNews('h-news',3); rHomeStats(); rTopScorers(); rHomeResults();
   fillSelects();
 })();
